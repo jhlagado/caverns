@@ -1,0 +1,13 @@
+Wave file information
+---------------------
+File name          : hyperd.wav
+Wave file MD5      : a05922afe1d67d85054b8d7188607ed4
+Creation date/time : 01-Dec-2010 12:06:27 UTC
+Sample rate (Hz)   : 22050
+
+DGOS tape information
+---------------------
+DGOS type          : B
+Baud rate          : 1200
+
+Wave file created by the MSPP Team :)
