@@ -1,0 +1,24 @@
+{
+  "name": "caverns",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "es6-promise": "^4.2.5",
+    "isomorphic-fetch": "^2.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhlagado/caverns.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhlagado/caverns/issues"
+  },
+  "homepage": "https://github.com/jhlagado/caverns#readme"
+}
