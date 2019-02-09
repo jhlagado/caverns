@@ -99,14 +99,47 @@ const tokens = {
 };
 
 
-const buffer = fs.readFileSync('hyperd.tap', null);
+// function* tokzer(buffer) {
+//     let i = 0;
+//     while (i < buffer.length) {
+//         const num = buffer[i] * 256 + buffer[i + 1];
+//         yield buffer.slice(i,i+2);
+//         i += 2;
 
-// let s = [...buffer].slice(158).map(i =>
-//     i == 0x0D ? '\n' :
-//     i < 32 ? '' :
-//     i in tokens ? ` ${tokens[i]} ` :
-//     String.fromCharCode(i)
-// ).join('');
+//         const len = buffer[i];
+//         yield len;
+//         i++;
+
+//         let j = i + len;
+//         yield buffer.slice(i,j);
+//         i = j;
+//     }
+// }
+
+// const buffer = fs.readFileSync('caverns.tap', null);
+// // const tok = tokzer([...buffer.slice(158)]);
+// const tok = tokzer([...buffer.slice(0xe3b)]);
+
+// lines = [];
+// while (true){
+//     const num = tok.next();
+//     const len = tok.next();
+//     const line = tok.next();
+//     if (line.done) break;
+//     lines.push(`${num.value.join(':')} ! ${len.value} !` + line.value.join(','));
+//     // const num1 = tok.next();
+//     // console.log(num1);
+// }
+// console.log(lines);
+
+// // let s = [...buffer].slice(158).map(i =>
+// //     i == 0x0D ? '\n' :
+// //     i < 32 ? '' :
+// //     i in tokens ? ` ${tokens[i]} ` :
+// //     String.fromCharCode(i)
+// // ).join('');
+
+const buffer = fs.readFileSync('caverns.tap', null);
 
 const lines = [];
 let current = [];
