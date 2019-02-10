@@ -87,7 +87,7 @@
 87 IF A=2 THEN LET J=1
 88 IF A=45 THEN LET W=43
 89 IF A=35 THEN LET W=0
-90 IF P(Z24)<>38 THEN LET G=39
+90 REM IF P(Z24)<>38 THEN LET G=39
 91 IF A=49 THEN LET D=49
 92 IF SEARCH (A0$," look ")>0 THEN LET R=0: GOTO 5
 93 IF SEARCH (A0$," list ")=0 THEN 101
@@ -99,14 +99,14 @@
 99 PRINT : FOR L=7 TO 24: IF P(L)=-1 THEN GOSUB 165
 100 NEXT L: GOTO 5
 101 IF SEARCH (A0$," quit ")=0 THEN 107
-102 S=0: FOR X=7 TO 17: IF P(X)= DATA -1 THEN LET S=S+X-6
+102 S=0: FOR X=7 TO 17: IF P(X)= -1 THEN LET S=S+X-6
 103 IF P(X)=1 THEN LET S=S+(X-6)*2
 104 NEXT X
 105 PRINT \\"You have a score of";S;" out of a possible 126 points in";U;" moves.": GOSUB 192: PRINT "Another adventure? ";:Y0$= KEY $
 106 Y0$= KEY $: IF Y0$="N" OR Y0$="n" THEN 209 ELSE IF Y0$="Y" OR Y0$="y" THEN RUN ELSE 106
 107 FOR Z=1 TO 6: IF P(Z)=A THEN NEXT *Z 109
 108 IF Z=0: GOTO 166
-109 IF Z= POKE 5 THEN PRINT "The giant bat picked you up and carried you to another place.":A=33:R=0:P(5)=P(5)+7: GOTO 5
+109 IF Z=5 THEN PRINT "The giant bat picked you up and carried you to another place.":A=33:R=0:P(5)=P(5)+7: GOTO 5
 110 GOTO 166
 111 RESTORE 182: FOR N=1 TO Z: READ K0$,K1$: NEXT N
 112 PRINT "AUUUUUGH...you've just been killed by a";K0$;K1$;"!!": GOTO 102

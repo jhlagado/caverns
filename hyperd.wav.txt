@@ -1,0 +1,20 @@
+waveReader: hyperd.wav
+    position: 2845112 (EOF)
+    total samples: 2845112
+    sample rate: 22050Hz
+    channels: 1
+    bits per sample: 8
+
+microbee.audioToBytes
+    position: 13316 (EOF)
+
+microbee.bytesToBlocks
+    position: 52 (EOF)
+    header: name:'HYPERD',type:'B',datalen:0x3380,load:0x08C0,start:0x0000,speed:0xFF,auto:0x00
+
+microbee.blocksToBytes
+    position: 13317 (EOF)
+
+microbee.tapFileWriter: hyperd.tap
+    position: 13317 (EOF)
+

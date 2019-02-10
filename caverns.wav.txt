@@ -1,0 +1,20 @@
+waveReader: caverns.wav
+    position: 2767092 (EOF)
+    total samples: 2767092
+    sample rate: 22050Hz
+    channels: 1
+    bits per sample: 8
+
+microbee.audioToBytes
+    position: 12930 (EOF)
+
+microbee.bytesToBlocks
+    position: 50 (EOF)
+    header: name:'CAVERN',type:'B',datalen:0x3200,load:0x08C0,start:0x0000,speed:0xFF,auto:0x00
+
+microbee.blocksToBytes
+    position: 12931 (EOF)
+
+microbee.tapFileWriter: caverns.tap
+    position: 12931 (EOF)
+
