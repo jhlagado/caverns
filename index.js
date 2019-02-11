@@ -99,56 +99,20 @@ const tokens = {
 };
 
 
-// function* tokzer(buffer) {
-//     let i = 0;
-//     while (i < buffer.length) {
-//         const num = buffer[i] * 256 + buffer[i + 1];
-//         yield buffer.slice(i,i+2);
-//         i += 2;
-
-//         const len = buffer[i];
-//         yield len;
-//         i++;
-
-//         let j = i + len;
-//         yield buffer.slice(i,j);
-//         i = j;
-//     }
-// }
-
-// const buffer = fs.readFileSync('caverns.tap', null);
-// // const tok = tokzer([...buffer.slice(158)]);
-// const tok = tokzer([...buffer.slice(0xe3b)]);
-
-// lines = [];
-// while (true){
-//     const num = tok.next();
-//     const len = tok.next();
-//     const line = tok.next();
-//     if (line.done) break;
-//     lines.push(`${num.value.join(':')} ! ${len.value} !` + line.value.join(','));
-//     // const num1 = tok.next();
-//     // console.log(num1);
-// }
-// console.log(lines);
-
-// // let s = [...buffer].slice(158).map(i =>
-// //     i == 0x0D ? '\n' :
-// //     i < 32 ? '' :
-// //     i in tokens ? ` ${tokens[i]} ` :
-// //     String.fromCharCode(i)
-// // ).join('');
-
-const buffer = fs.readFileSync('caverns.tap', null);
+const buffer = fs.readFileSync('hyperd.tap', null).slice(158);
 
 const lines = [];
 let current = [];
-for (i of buffer) {
-    if (i === 0x0D){
+for (let i = 0; i < buffer.length; i++) {
+    if (
+        buffer[i] === 0x0D
+        && buffer[i + 1] < 0x50
+        && (buffer[i + 1] * 256 + buffer[i + 2] !== 8226)
+    ) {
         lines.push(current);
         current = [];
-    } else{
-        current.push(i);
+    } else {
+        current.push(buffer[i]);
     }
 }
 
@@ -156,11 +120,16 @@ const list = lines.map(line => {
     const num0 = line[0];
     const num1 = line[1];
     const num2 = line[2];
-    s = line.slice(3).map(i =>
-        i < 32 ? '.' :
-        i <= 128 ? String.fromCharCode(i) :
-        i <= 223 ? ` ${tokens[i]} ` : '?'
-    ).join('');
-    return `${num0 * 256 + num1} ${s}`
+    s = line.slice(3).reduce((acc, i) => {
+        if (i === '"'.charCodeAt(0)) acc.inStr = !acc.inStr;
+        if (i >= 32 && i < 223) {
+            if (i < 128)
+                acc.list.push(String.fromCharCode(i));
+            else if (!acc.inStr)
+                acc.list.push(` ${tokens[i]} `);
+        }
+        return acc;
+    }, { inStr: false, list: [] });
+    return `${num0 * 256 + num1} ${s.list.join('')}`
 });
 console.log(list.join('\n'));

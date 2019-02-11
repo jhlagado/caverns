@@ -290,12 +290,12 @@ function caverns() {
     setCursor(1, 7);
     printChar('-', 45)
 
-    if (Z > 0 && Z != 5 && M != 20) goto(111);
+    if (Z > 0 && Z != 5 && M != 20) goto111();
     printRoomDesc(state);
     // 77 PRINT :R=1: PRMT ( )
     state.R = 1;
     // 78 IF Z>0 AND Z<>5 AND M<>20 THEN 111
-    if (Z > 0 && Z != 5 && M != 20) goto(111);
+    if (Z > 0 && Z != 5 && M != 20) goto111();
     // 79 INPUT A0$: IF A0$="" THEN 79 ELSE LET A0$=" "+A0$+" ":U=U+1
     let A0$ = '';
     do {
@@ -377,15 +377,29 @@ function caverns() {
     }
     print(`You have a score of ${S} out of a possible 126 points in ${state.U} moves.`);
     gosub192();
-    print("Another adventure? ");
+    let Y0$ = '';
+    do {
+        do {
+            Y0$ = question("Another adventure? ").toLowercase();
+        } while (Y0$ == '');
+    } while (Y0$[0] != 'y' && Y0$[1] != 'n');
 
     // 107 FOR Z=1 TO 6: IF P(Z)=A THEN NEXT *Z 109
     // 108 IF Z=0: GOTO 166
     // 109 IF Z=5 THEN PRINT "The giant bat picked you up and carried you to another place.":A=33:R=0:P(5)=P(5)+7: GOTO 5
     // 110 GOTO 166
 
-    for (let Z = 1; Z <= 6; Z++) {
-        if (state.P(Z) == state.A) break;
+    if (p.slice(1,6+1).findIndex(item => item == state.A)) {
+        if (z==5) {
+            print('The giant bat picked you up and carried you to another place.');
+            state.A = 33;
+            state.R = 0;
+            state.P(5) += 7;
+            goto5();
+        }
+    }
+    else {
+        goto166();
     }
 
     // 111 RESTORE 182: FOR N=1 TO Z: READ K0$,K1$: NEXT N
@@ -456,7 +470,7 @@ function caverns() {
     // 164 PRINT "You descend the rope, but it drops 10 feet short of the floor. You jump the rest of the way.":R=0:P(M)=A:A=35: GOTO 5
 
     // 165 RESTORE 182: FOR K=1 TO L: READ H0$,H1$: NEXT K: PRINT "a";H0$;H1$;", ";: RETURN
-    
+
     // 166 RESTORE 190: FOR O=1 TO 16: READ P0$: IF SEARCH (A0$,P0$)>0 THEN NEXT *O 169
     // 167 NEXT O
     // 168 GOTO 113
