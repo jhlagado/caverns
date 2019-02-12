@@ -14,11 +14,11 @@ Later in 1983, the program came to be distributed by Lindsay R Ford's Dreamcards
 
 ![Dreamcards](adverts/dc-catalogue-1984.png)
 
-Right here I'd like to stop and say thank you to the [Microbee Software Preservation Project](https://microbee-mspp.org.au) and especially to Alan Laughton (aka ChickenMan) who was critical in compiling the disks of files that these games got preserved on. But I'd especially like to thank Alan for his help and generosity in helping me recover the original text of the programs and for pointing me in the right direction. I'm doing my bit for the preservation of my tiny piece of Microbee software but releasing the source code under the GNU Public License.
+Right here I'd like to stop and say thanks to the [Microbee Software Preservation Project](https://microbee-mspp.org.au) and especially to Alan Laughton (aka ChickenMan) who was critical in compiling the disks of files that these games got preserved on. But I'd especially like to thank Alan for his help and generosity in helping me recover the original text of the programs and for pointing me in the right direction. I'm doing my bit for the preservation of my tiny piece of Microbee software but releasing the source code under the GNU Public License.
 
-Also included in this repo is a node script that I wrote for reading Microbee MicroWorld Basic files (MWB)and converting their tokens back into something human readable.
+Also included in this repo is a node script that I wrote for reading Microbee MicroWorld Basic files (MWB) and converting their tokens back into something human readable.
 
-Note: the cover image is taken from the [NanoWasp emulator](http://nanowasp.org/). As, I currently no longer own a Microbee. I may have to see if I can correct that situation at some stage.
+Note: the top image is taken from the [NanoWasp emulator](http://nanowasp.org/). 
 
 ![VIC-20](adverts/microbee-versions-te-10.jpg
 )
