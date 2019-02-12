@@ -1,0 +1,239 @@
+100  REM REMOVED -- POKE 162,30: POKE 163,128: POKE 140,1: POKE 220,23: RESTORE 20000: FOR X=0 TO 41: READ Y: POKE 62976+X,Y: NEXT X: ON  ERROR  GOTO 19999
+110  CLS : DIM I(3),P(24): RESTORE 2560: FOR X=1 TO 11: READ P(X): NEXT X:J=11:R7=1:A=1:P7=1:C0=0
+200  PRINT \"   DREAMCARDS Software presents:"\\ SPC (10);"H Y P E R D R I V E    II"; SPC (8);"by John Hardy (c)1983"
+210  PRINT \ SPC (10)"based on an idea by Ken Stone"\SPC (10)"Released under GNU Public License in 2019"\\: PLAY 0,40: CLS :F=0:U=0:R=0
+270  CURS 1,5: PRINT [A63 45]: IF Z=0 THEN 320
+290  PRINT "AAAUUUGGGHHH!!!"
+300  IF Z=1 THEN  PRINT "You have been stung by a slug. Thousands of others crawl over   and through your corpse. You are a very tasty meal!": GOTO 11000
+310  IF Z=2 THEN  PLAY 24,3: PRINT "The robot cut you in two!": GOTO 11000
+320  IF C0>0 AND (P(6)=A OR P(6)=-1) OR P7=1 THEN 360
+330  PRINT "It's very dark, too dark to see...I'm scared!"
+340  IF  RND <.3 AND A<>27 THEN  PRINT "You've just walked into the fangs of something green and slimy!!": GOTO 11000
+350  GOTO 990
+360  PRINT "You are";
+370  IF A=1 THEN  PRINT " in your space craft. Through the porthole you can see   that the ship is docked in an enormous hangar."
+371  IF A=1 AND P7=1 THEN  PRINT "A tractor beam is preventing your ship from launching."
+372  IF A=1 AND P7=0 THEN 10000
+380  IF A=2 THEN  PRINT " standing by the docking bay of a huge space"\"liner. There is a door to the east."
+390  IF A=3 THEN  PRINT " in a corridor. You notice a trail of green slime"\"leading south."
+400  IF A=4 THEN  PRINT " in a room with walls lined with bunks. There is a sign  on one wall: CREW'S QUARTERS"
+410  IF A=5 THEN  PRINT " on the observation deck of the huge space liner. The redglow of the crab nebula illuminates the centre of the sky."
+420  IF A=6 THEN  PRINT " are in a small plastic bubble, east of the main"\"observation deck. You can get a fantastic view of the warp"\"engines from here."
+430  IF A=7 THEN  PRINT " the ship's laboratory. The floor is splattered with a   dozen  different chemicals and smashed test tubes lie all over  the benches."
+431  IF A=7 THEN  PRINT "There is a small safe in the corner."
+440  IF A=8 OR A=17 OR A=18 OR A=23 OR A=25 OR A=31 OR A=36 OR A=37 OR A=46 OR A=47 THEN  PRINT " in a corridor."
+450  IF A=9 THEN  PRINT " in the supply room. There are many shelves, but all are empty"
+460  IF A=10 THEN  PRINT " in an air lock. An old rusty bolt sticks out of the"\"control panel."
+470  IF A=11 THEN  PRINT " in a tiny room with ``TELEPORT'' printed on the wall."
+480  IF A=12 THEN  PRINT " in a north-south corridor."
+481  IF A=14 THEN  PRINT " in a south-north corridor."
+490  IF A=13 THEN  PRINT " on the ship's bridge. All of the instruments are dead   except a glowing light marked `tractor beam'"
+500  IF A=15 THEN  PRINT " in the central library. There is a machine here for"\"playing magnetic disks."
+510  IF A=16 THEN  PRINT " in the captain's cabin. There is a desk, a bunk and a   locked filing cabinet."
+540  IF A=19 THEN  PRINT " standing before a control panel. You can see a large"\"button on the wall."
+550  IF A=20 THEN  PRINT " standing in a room. To the north you can just see a"\"faint beam of light across your path. To the east is a sign:"\"COMPUTER ROOM"
+560  IF A=21 THEN  PRINT " looking out a port-hole overlooking a huge hyperdrive   warp engine."
+580  IF A=22 THEN  PRINT " entering an electronic minefield. One false step will befatal!!": PLAY 1;2;3;4
+590  IF A=24 THEN  PRINT " standing before the central `house keeping' computer.   There is a green button and a red button here."
+610  IF A=26 THEN  PRINT " in the reactor control room. Amongst other buttons thereare two marked `Graphite in' and `Graphite out'."
+620  IF A=27 THEN  PRINT " in the central power station. There is a big red button on the wall."
+630  IF A=28 THEN  PRINT " standing on the eastern side of a huge 5 dimensional"\"chasm before a narrow electronic bridge. You can see a black"\"mass a few metres below."
+640  IF A=29 THEN  PRINT " in the middle of the bridge. The chasm is incredibly"\"deep."
+650  IF A=30 THEN  PRINT " on the far side of the bridge."
+670  IF A=32 THEN  PRINT " in a large white room.There is a vent on the eastern"\"wall."
+680  IF A=33 OR A=34 OR A=35 THEN  PRINT " in a twisting maze of dozens of passages."
+710  IF A=38 THEN  PRINT " standing before a metal ladder leading upwards."
+720  IF A=39 THEN  PRINT " standing before a tunnel eaten out of pure iron by the  slugs."
+730  IF A=40 THEN  PRINT " crawling up the tunnel. You might get stuck if you go   any further."
+740  IF A=41 OR A=42 THEN  PRINT " standing on a ledge suspended high above the chasm."
+760  IF A=43 THEN  PRINT " on another ledge just below the first one."
+770  IF A=44 THEN  PRINT " in the lower bowels of the ship. You can hear a low"\"vibration and the dripping of oil."
+780  IF A=45 THEN  PRINT " in total darkness."
+810  IF A=48 THEN  PRINT " in a narrow tunnel leading west."
+820  IF A=49 THEN  PRINT " in the Royal Chamber of the Xpetian colony. You can see a ladder."
+821  IF A=49 AND Z7=0 THEN  PRINT "In the centre of the room lies a giant slug tended by hundreds  of servants. This is the Queen Xpetian - her telepathic messagescontrol the whole colony."
+830  IF Z7=1 THEN 840 ELSE  IF A=47 OR A=38 OR A=37 OR A=31 THEN  PRINT "The room is infested with hundreds of alien green slugs which   become hungry and excited at your presence.":Z=1
+840  IF P7=0 THEN 880 ELSE  IF J=A-2 THEN  PRINT "You hear a patrol robot approaching!"
+850  IF J=A-1 THEN  PRINT "A laser-bearing robot is approaching!"
+860  IF J=A+1 THEN  PRINT "You see a patrol robot pass in the distance."
+870  IF A=J THEN  PRINT "A large metallic robot points its gun at you!":Z=2
+880 V=0
+890  FOR L=1 TO 11
+900  IF P(L)=A THEN  LET V=V+1
+910  NEXT L
+920  IF V=0 THEN 990
+930  PRINT "You can also see..."
+940  FOR L=1 TO 11
+950  IF P(L)=A THEN  GOSUB 2480
+960  NEXT L
+990  INPUT A0$: IF A0$="" THEN 990 ELSE  LET A0$=" "+A0$+" ":U=U+1:C0=C0-1: FOR X=2 TO  LEN (A0$)-1:Y= ASC (A0$(;X)): IF Y>64 AND Y<91 THEN  LET A1$=A0$(;1,X-1)+ CHR (Y+32)+A0$(;X+1):A0$=A1$
+1000  NEXT X: CLS :J=J+1: IF J>28 THEN  LET J=0
+1011  RESTORE 3000: FOR F=1 TO 32: READ H7$,H: IF  SEARCH (A0$,H7$)>0 THEN  NEXT *F 1013
+1012  NEXT F: GOTO 1280
+1013  IF F>11 THEN H
+1014  IF  SEARCH (A0$," disk ")>0 THEN  PRINT "Which disk?": GOTO 270
+1020  RESTORE 2520
+1030  FOR M=1 TO 11: READ N0$,N1$
+1040  IF  SEARCH (A0$,N1$)>0 THEN  NEXT *M 1051
+1050  NEXT M: PRINT "I can't": GOTO 270
+1051  IF P(M)<>-1 AND P(M)<>A THEN  PRINT "Where? I can't see it.": GOTO 270
+1052  GOTO H
+1070 R=0: GOTO 270
+1090  PRINT "You are carrying ";:V=0
+1100  FOR L=1 TO 11
+1110  IF P(L)=-1 THEN  LET V=V+1
+1120  NEXT L
+1130  IF V=0 THEN  PRINT "nothing.": GOTO 270
+1140  PRINT : FOR L=1 TO 11: IF P(L)=-1 THEN  GOSUB 2480
+1150  NEXT L: PRINT : GOTO 270
+1170 S=0: FOR X=7 TO 17: IF P(X)=-1 THEN  LET S=S+X-6
+1180  IF P(X)=1 THEN  LET S=S+(X-6)*2
+1190  NEXT X
+1210  PRINT "THUMP!!": GOTO 270
+1220  PRINT "Help? You shouldn't need it!!": GOTO 270
+1240  PRINT "Very brave...but how?": GOTO 270
+1250  PRINT "Don't mind if I do, Scumbag!!": GOTO 270
+1260  PRINT "Which way?": GOTO 270
+1270  PRINT "No thanks...I'm too busy.": GOTO 270
+1280  RESTORE 2570: FOR Q=0 TO 3: READ M0$: IF  SEARCH (A0$,M0$)>0 THEN  NEXT *Q 1300
+1290  NEXT Q: PRINT "I don't understand.": GOTO 270
+1300  RESTORE 2490: FOR N=1 TO A
+1310  FOR O=0 TO 3: READ I(O): NEXT O: NEXT N
+1320 B=I(Q)
+1330  IF B=0 THEN  PRINT "You can't go that way"
+1340  IF A=45 AND P(3)<>-2 THEN  PRINT "You are floating helplessly in zero gravity.": IF P(3)=-1 THEN  PRINT "Your magnetic shoes flew out of your hands and stuck to a wall!!":P(3)=0
+1350  IF A=45 AND P(3)<>-2 THEN 270
+1360  IF B=128 ELSE 1450
+1370 R=0
+1380  IF A=6 THEN  PRINT "The plastic bubble cracked, sucking you deep into space!!": GOTO 11000
+1390  IF L7=0 AND A=4 THEN  LET A=10: GOTO 270 ELSE  IF A=4 THEN  PRINT "The airlock is sealed.": GOTO 270
+1400  IF A<>26 THEN 1420
+1410  IF C7=0 THEN  PRINT "A powerful force-field holds you back!": GOTO 270 ELSE  LET A=27: GOTO 270
+1420  IF A<>32 THEN 1440
+1430  IF P6=0 THEN  PRINT "An air vent is in the way.": GOTO 270 ELSE  LET R=0:A=33: GOTO 270
+1440  IF A=20 THEN  PRINT "You've set off an alarm!!": FOR X=1 TO 15: PLAY 10;20: NEXT X: PRINT "Suddenly a patrol robot swings around the corner and blasts you!": GOTO 11000
+1450  IF B=127 AND I7=0 THEN  PRINT "BANG! You walked into an iron door!": GOTO 270: ELSE  IF B=127 THEN  LET A=22:R=0: GOTO 270
+1460  IF B>0 THEN  LET A=B
+1470 R=0: GOTO 270
+1510 Q=0
+1520  FOR X=1 TO 11
+1530  IF P(X)=-1 THEN  LET Q=Q+1
+1540  NEXT X
+1550  IF Q>6 THEN  PRINT "You are carrying too many objects.": GOTO 270
+1560 P(M)=-1: GOTO 270
+1580  LET P(M)=A: GOTO 270
+1600  IF M>3 THEN  PRINT "Don't be stupid!" ELSE  LET P(M)=-2
+1610  GOTO 270
+1640  IF M=8 OR M=9 ELSE  PRINT "Is that some kind of game?": GOTO 270
+1650  IF A<>15 THEN  PRINT "There's no diskette player here.": GOTO 270
+1660  IF M=8 ELSE 1760
+1670  SPEED 255: PRINT "   Stardate 46.973.36   "
+1680  PRINT "Biological Survey 4.3221 "
+1690  PRINT "Compiled by Dr. Schwi H.p TY.n"
+1700  PRINT "Species: Xpetian Angoforta"
+1710  PRINT "Origin:  Xpeltian Binary Star System, Planet 4 (Northern Hem.)"
+1720  PRINT "Compos:  Carbon based"\"Class:   Chlorovert"\"Respiratory system:  Oxygen dependant"
+1730  PRINT "Sensitivity:  Mildly sensitive to some radioactive halides."
+1740  PRINT "Structure:  Segmented, bilaterally symmetrical."
+1750  PRINT " ...<message ends>"; SPC (15);"Safe Comb. 43226": SPEED 0: INPUT A0$: CLS : GOTO 270
+1760  SPEED 255: PRINT "    Starship Deuteronomy--- Operational Report  #356.1193"; SPC (15);"Stardate 28.973.36     Navigator:Rz. sXiov"
+1770  PRINT \\"Starship successfully completed diplomatic mission to Algaraath system in the Q-alpha-3 sector and is now proceeding to Lethria for 3. p.revs of R & R"\\
+1780  PRINT "Ship's progress: satisfactory despite a few difficulties with   Hyperdrive#2 (b.003.W) which has suffered intermittent failures.The engineers put this down to abrasion in "
+1790  PRINT "particle acceleration plates due to the uncharted dust cloud"\"we passed through in the Xpeltia Binary System. A complete checkand overhaul will be initiated when we dock"
+1800  PRINT \ SPC (18);"---- MESSAGE COMPLETE ----": SPEED 0: INPUT A0$: CLS : GOTO 270
+1820  IF  SEARCH (A0$," book ")=0 THEN  PRINT "There's nothing much to read here.": GOTO 270
+1830  SPEED 100: PRINT "A long time ago, in a galaxy far, far away....": SPEED 0
+1840  GOTO 270
+1860  IF  SEARCH (A0$," wrench ")=0 THEN 1890
+1870  IF A<>10 THEN  PRINT "That won't work" ELSE  LET L7=1: IF P(1)<>-2 THEN  PRINT "You have suffocated to death!": GOTO 11000
+1880  GOTO 270
+1890  IF  SEARCH (A0$," torch ")=0 THEN  PRINT "That won't work.": GOTO 270
+1900  IF C0<1 AND C1=0 THEN  LET C0=50: GOTO 270
+1920  IF  SEARCH (A0$," tube ")=0 THEN 1580
+1930  PRINT "The test tube smashes on the floor and emits a foul orange gas.":P(7)=0
+1940  IF A=31 OR A=47 OR A=38 OR A=37 THEN  PRINT "The aliens are repelled by the gas and move away for a moment,  but then return."
+1950  IF A=49 THEN  PRINT "The Queen of the Xpetians, overcome by the gas, falls to the"\"floor, shrivels and dies!":Z7=1
+1960  GOTO 270
+1990  IF A<>16 OR M<>5 THEN  PRINT "It won't open.": GOTO 270
+2000  PRINT "You unlocked the cabinet. Inside is a small magnetic disk markeddisk1.":P(8)=-1: GOTO 270
+2020  IF A<>20 THEN  PRINT "you don't need to crawl under that." ELSE  LET R=0:A=19
+2030  GOTO 270
+2040  IF P7=0 THEN  PRINT "There is a power shut-down.": GOTO 270
+2050  IF A<>11 THEN  LET R=0:A=11: GOTO 270
+2060  IF A=11 AND P(2)<>-2 THEN  PRINT "Bracelet must be worn.": GOTO 270
+2070  INPUT "destination code";D0$:R=0: IF D0$="1" THEN  LET A=2
+2080  IF D0$="2" THEN  LET A=15
+2090  IF D0$="3" THEN  LET A=5
+2100  IF D0$="4" THEN  LET A=26
+2101 J=11
+2110  IF D0$="1" OR D0$="2" OR D0$="3" OR D0$="4" ELSE  PRINT "Invalid destination code"
+2120  GOTO 270
+2140  INPUT "Combination?";D0$
+2150  IF D0$<>"43226" THEN  PRINT "Invalid combination.": GOTO 270
+2160  PRINT "The safe opens. Inside is a small test tube of Sodium Astatide.":P(7)=-1: GOTO 270
+2180  IF L7=1 AND A=10 THEN  LET R=0:A=11: GOTO 270
+2190  IF A=49 THEN  LET R=0:A=26: GOTO 270
+2200  IF A=38 THEN  LET R=0:A=39: GOTO 270
+2210  PRINT "You can't get up."
+2220  GOTO 270
+2240  IF A=41 OR A=28 OR A=30 THEN  SPEED 100: PRINT "AAAUUUGGGHHH!!!!!  You plummet to your death!": SPEED 0: GOTO 11000
+2250  IF A=29 THEN  LET R=0:A=41: GOTO 270
+2260  IF A=42 THEN  LET R=0:A=43: GOTO 270
+2270  IF  SEARCH (A0$," jump ")>0 THEN  PRINT "WHEE! That was fun!" ELSE  PRINT "The floor's in the way!"
+2280  GOTO 270
+2300  IF A=19 THEN  PLAY 2;3;4;2:I5=1: GOTO 270
+2310  IF A=27 THEN  PRINT \"POWER DOWN SEQUENCE:": PLAY 4,5: PRINT "tractor beam ";: PLAY 3,5: PRINT ,"(check)"\"teleport ";: PLAY 2,5
+2320  IF A=27 THEN  PRINT ,"(check)"\"lights ";: PLAY 1,5: PRINT ,"(check)": PLAY 2;6;5;9;4;6:P7=0:R=0: GOTO 270
+2330  IF A<>26 THEN 2360
+2340  IF  SEARCH (A0$," in ")>0 THEN  PRINT "The graphite rods move in and the whole pile cools down.": LET R7=0: GOTO 270
+2350  IF  SEARCH (A0$," out ")>0 THEN  PRINT "The graphite rods withdraw slowly from the pile. The whole unit begins to melt down....";: FOR X=1 TO 10: PLAY X,10: NEXT X: PRINT "You're dead!": GOTO 11000
+2360  IF A<>24 THEN 2430
+2370  IF  SEARCH (A0$," red ")>0 THEN  LET A=20: GOTO 1440
+2380  IF  SEARCH (A0$," green ")=0 THEN 2430 ELSE  INPUT "COMMAND no.";D0$
+2390  IF D0$="2" ELSE  LET A=20: GOTO 1440
+2400 C7=1
+2410  PRINT "COMPUTER SHUT DOWN": IF R7=1 THEN  PRINT "In the distance you hear the familiar rumble of an uncontrolled reactor overload. KABOOOM!! You're cremated!!!": GOTO 11000
+2420  GOTO 270
+2430  PRINT "Press what?": GOTO 270
+2440  IF P(11)<>-1 THEN  PRINT "You don't have it": GOTO 270
+2450  IF A=20 AND I5=1 THEN  PRINT "The door lifted out of the way.":I7=1: GOTO 270
+2460  IF A=32 THEN  LET P6=1: GOTO 270
+2461  PRINT "FIZZLE!": GOTO 270
+2480  RESTORE 2520: FOR K=1 TO L: READ H0$,H1$: NEXT K: PRINT "a";H0$;H1$;", ";: RETURN
+2490  DATA 2,0,0,0,0,1,0,3,5,4,2,9,3,0,0,128,0,3,0,6,8,0,5,128,8,6,0,0,5,7,5,5,5,0,3,0,0,0,0,0,12,0,0,0,13,11,12,12,12,15,12,12,13,11,12,17,16,14,0,0,0,15,0,0,0,0,0,20,19,21,17,19,0,20
+2500  DATA  18,0,128,21,17,127,20,0,23,0,19,21,20,24,0,0,0,21,19,21,0,24,0,26,0,0,25,128,0,28,26,0,0,0,0,0,26,29,0,0,28,30,31,32,29,0,0,30,0,0,30,0,0,128,34,34,34,35,33,33,34,33
+2510  DATA 33,36,33,35,38,35,0,37,0,0,36,0,0,36,0,0,40,38,38,38,4,0,0,0,0,0,42,0,0,0,0,41,0,44,0,0,43,45,0,0,48,0,46,44,0,0,47,45,0,0,0,46,0,45,49,0,0,0,0,48
+2520  DATA "n oxygen"," mask "," teleport"," bracelet "," pair of magnetic"," shoes ","n old and dusty"," book "," small"," key "
+2530  DATA " battery operated"," torch "
+2540  DATA " smelly test"," tube "," small magnetic disk marked"," disk1 "," small magnetic disk marked"," disk2 "," monkey"," wrench "," sonic screw","driver "
+2550  DATA  "",""
+2560  DATA  7,19,34,16,41,18,0,0,15,9,9,0
+2570  DATA  " north "," south "," west "," east "
+2590  IF S<20 THEN  PRINT "Hopeless beginner"
+2600  IF S<50 AND S>19 THEN  PRINT "Experienced loser"
+2610  IF S<100 AND S>49 THEN  PRINT "Average Viking"
+2620  IF S<126 AND S>99 THEN  PRINT "Excellent...but you've left something behind!"
+2630  IF S=126 THEN  PRINT "Perfectionist and genius!!"
+2640   RETURN
+3000  DATA "get",1510," put",1580," dro",1580," wea",1600," pla",1640," rea",1820,"twi",1860," tur",1860,"thr",1920,"swi",1890,"unl",1990,"cra",2020,"loo",1070,"list",1090,"qui",11000
+3001  DATA " hit",1210," kic",1210," hel",1220," att",1240," kil",1240," fuc",1250," shi",1250," run",1260," sit",1270," tel",2040," saf",2140," up ",2180," dow",2240,"jum",2240
+3002  DATA "pus",2300,"pre",2300,"dri",2440
+8226 >0 THEN  PRINT "Which disk?": GOTO 270
+10000   FOR X=1 TO 1000: NEXT X: PRINT \\"The tractor beam has been disconnected and you are free to"\"leave!!! Your ship lifts off the pad and warps into hyperspace!!"
+10001  PLAY 1,8: FOR X=1 TO 1000: NEXT X: ON  ERROR  GOTO 10006
+10002  CLS : HIRES : PLOT  1,20 TO 100,50 TO 400,50 TO 500,20: PLOT  120,30 TO 120,40 TO 380,40 TO 380,30 TO 120,30: PLOT  200,50 TO 200,54 TO 220,54 TO 220,70 TO 200,70 TO 200,74 TO 220,74 TO 300,50
+10003 P=332: FOR X=1 TO 20: CURS ( INT ( RND *400+1)): PRINT "*";: NEXT X:Y=54: CURS 456: PRINT "UP, UP,": CURS 466: PRINT "AND": CURS P: PRINT " "
+10004  FOR X=1 TO 120: PLOT  210-X,X+Y TO 213-X,X+Y: SET  212-X,X+Y+1: OUT 2,64: OUT 2,0
+10005  PLOT I 210-X,X+Y TO 213-X,X+Y: RESET  212-X,X+Y+1: NEXT X
+10006  CURS 470: PRINT "A W A A A Y Y Y . . . . .": CURS P: PRINT "O": PLAY 20,4: CURS P: PRINT "o": PLAY 21,3: CURS P: PRINT ".": PLAY 23,2: CURS P: PRINT " ": PLAY 24;0,6
+10007  PLAY 4,2;8,2;9,2;11,10;4,2;8,2;9,2;11,10
+10008  PLAY 4,2;8,2;9,2;11,4;8,4;4,2;8,4;6,10
+10009  PLAY 8,2;8,2;6,2;4,8;8,4;11,4;11,2;9,10
+10010  PLAY 8,2;9,2;11,4;8,4;4,4;6,4;4,10
+10011  GOTO 11000
+10212  PRINT "Help? Think for yourself, Dummy!": GOTO 270
+11000  PRINT \\\"Another Adventure? ";
+11001 A0$= KEY $: IF A0$="Y" OR A0$="y" THEN  RUN  ELSE  IF A0$<>"N" AND A0$<>"n" THEN 11001
+19999  REM REMOVED -- USR (62976)
+20000  REM REMOVED -- DATA  17,0,9,1,1,0,120,18,19,121,18,19,3,197,33,30,246,1,12,0,237,176,203,122,193,40,235,195,33,128,12,32,67,79,80,89,82,73,71,72,84,13
+17750 REM REMOVED -- U2,84                                              

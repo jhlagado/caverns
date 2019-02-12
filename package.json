@@ -4,24 +4,18 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "es6-promise": "^4.2.5",
-    "isomorphic-fetch": "^2.2.1",
     "readline-sync": "^1.4.9"
   },
-  "devDependencies": {
-    "nodemon": "^1.18.10"
-  },
   "scripts": {
-    "start": "node ./bin/caverns",
-    "debug": "nodemon --inspect ./bin/caverns",
+    "start": "node detok",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jhlagado/caverns.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "John Hardy",
+  "license": "GPL",
   "bugs": {
     "url": "https://github.com/jhlagado/caverns/issues"
   },

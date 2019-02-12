@@ -1,3 +1,5 @@
+'use strict';
+
 const fs = require('fs');
 
 const tokens = {
@@ -98,38 +100,50 @@ const tokens = {
     223: 'CHR',
 };
 
+function* tokzer(buffer) {
+    let i = 0;
+    while (i < buffer.length) {
+        const num = buffer[i] * 256 + buffer[i + 1];
+        yield num;
+        i += 2;
 
-const buffer = fs.readFileSync('hyperd.tap', null).slice(158);
+        const len = buffer[i];
+        yield len;
+        ;
 
-const lines = [];
-let current = [];
-for (let i = 0; i < buffer.length; i++) {
-    if (
-        buffer[i] === 0x0D
-        && buffer[i + 1] < 0x50
-        && (buffer[i + 1] * 256 + buffer[i + 2] !== 8226)
-    ) {
-        lines.push(current);
-        current = [];
-    } else {
-        current.push(buffer[i]);
+        let j = i + len;
+        yield buffer.slice(i + 1, j);
+        i = j;
     }
 }
 
-const list = lines.map(line => {
-    const num0 = line[0];
-    const num1 = line[1];
-    const num2 = line[2];
-    s = line.slice(3).reduce((acc, i) => {
-        if (i === '"'.charCodeAt(0)) acc.inStr = !acc.inStr;
-        if (i >= 32 && i < 223) {
-            if (i < 128)
-                acc.list.push(String.fromCharCode(i));
-            else if (!acc.inStr)
-                acc.list.push(` ${tokens[i]} `);
-        }
-        return acc;
-    }, { inStr: false, list: [] });
-    return `${num0 * 256 + num1} ${s.list.join('')}`
-});
-console.log(list.join('\n'));
+function processBuffer(buffer) {
+    const tok = tokzer([...buffer.slice(0)]);
+    const lines = [];
+    while (true) {
+        const num = tok.next();
+        if (num.value == 0) break;
+        const len = tok.next();
+        const line = tok.next();
+        if (line.done) break;
+        lines.push(`${num.value} ${
+            line.value.map(i => i < 32 && i > 223 ? '' : i >= 128 ? ` ${tokens[i]} ` : String.fromCharCode(i)).join('')}`);
+    }
+    return lines.join('\n')
+}
+
+const args = process.argv.slice(2);
+if (args.length === 0)
+    console.log('\nMWB de-tokenizer\n\nusage: node detok filename.mwb [outfile.txt]\n');
+else {
+    const filename = args[0];
+    const buffer = fs.readFileSync(filename, null).slice(64);
+    const data = processBuffer(buffer);
+    console.log(JSON.stringify(args));
+    if (args.length == 1) {
+        console.log(data);
+    }
+    else {
+        fs.writeFileSync(args[1], data);
+    }
+}
