@@ -2,7 +2,7 @@
 
 This is my old program *Caverns*, released in 1983, the same year as the TEC-1. It was the first substantial program that I wrote and I'm glad to see it again after all these years. I was lucky that the game got preserved by collectors over the years. It's kind of a miracle that it wasn't lost in the intervening 35 years.
 
-*Caverns* began life as a text adventure game for the Sinclair ZX81 (16K extension) back in 1982. Not long after that my friend Ken Stone and I hand-ported it across to his Commodore VIC-20 and we worked on it together there. Then finally I transferred it yet again, this time to the Microbee. Each port led to various modifications and extensions. The Microbee version integrated many of the things I had learned.
+*Caverns* began life as a text adventure game for the Sinclair ZX81 (16K extension) back in 1982. Not long after that my friend Ken Stone and I hand-ported it across to his Commodore VIC-20 and we worked on it together there. Then finally I transferred it yet again, this time to the Microbee, still my favourite machine from that period. Each port led to various modifications and extensions. The Microbee version integrated many of the things I had learned.
 
 It's a supreme piece of spaghetti code written in BASIC!
 
