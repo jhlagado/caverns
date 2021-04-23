@@ -28,7 +28,9 @@ Here is the intoductory text for Caverns.
 ```
 You are standing in an old deserted hut. There is a door to the north.
 You can see a sign on the wall, should I read it master?
+
 The sign reads as follows.
+
 Deep in the icy mountains of northern Iotunheim there lived a small band of elves who called themselves 'The Great Sons of Svartalfheim.'
 These elves worked day and night deep underground in the limestone caves, mining for precious minerals which they fashioned into jewellery.
 So prized were their products that merchants and traders came from distant Asgar and Fenris to purchase them.
@@ -39,27 +41,36 @@ This was done and all the inhabitants of Svartalfheim were forced to live within
 Suddenly, to the surprise of all around, the elves began to die as if of some strange illness.
 Nothing could be done to save them and within a few weeks all of the elves were dead and their wonderful gifts lost forever.
 The King was furious and executed several of his courtesans, but the damage had already been done.
+
 Centuries passed and the story of Svartalfheim faded from memory until one day a goatherd called Peter ran into town with an incredible story.
 'Way up in the hills,' he said, 'is the entrance to a cave guarded by a green serpent that breathes flames!' Peter told a story of how he managed to escape the fiery breath of the dragon and found a tiny room filled with more gold and silver than he could possibly carry.
 The only jewel he could bring back to prove his story was a tinyruby ring which had obviously been crafted with great skill.
 Peter led a group of his fellow villagers back up into the mountains beyond Mt. Ymir, but they were all killed in a rock fall before they could reach the entrance.
+
 So Svartalfheim was once again lost and stories of its hidden treasures became myths.
 It is four hundred years since the days of Peter the goatherd and you have come to Iotunheim to search for the treasure your- self. You followed the valley to a forest in the foothills of Ymir and set up a base in a small hut which at one time belongedto a hermit.
+
 - - - RULES - - -
+
 Your aim is to obtain the highest possible score by collecting as much treasure as possible.
 You must find the legendary treasure room of Svartalfheim and bring the treasures back to this hut in order to maximize your score. To to achieve this endyou need to locate and manipulate several objects.
 When directing commands to the computer you must specify exactlywhat you mean:
+
 e.g. Kill dragon with sword 
 (a shorthand way of saying this is `Use sword')
+
 The command `use' causes the computer to execute the obvious function for the object:
 e.g. use candle = burn <whatever> with candle
+
 Several other commands exist which you must discover yourself, but here are some to start you off.
     North   Go north
     List    Give an inventory of objects carried
     Quit    Stop the game and give score
+
 When journeying the lands of Iotunheim and Svartalfheim it may help to make a map.
 Beware of paths that curve and double back on themselves particularly in the forest area.
 You will also find a compass of immeasurable value.
+
 Well the sun is rising, it is time you were on your way.
 Good Luck!!
 ```
