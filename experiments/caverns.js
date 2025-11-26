@@ -1,22 +1,3 @@
-Nice, this is the fun bit. Let’s actually nail down the data model of CAVERNS in JavaScript so you’ve got something concrete to stare at and poke.
-
-Below is a direct, literal-ish translation of the DATA / READ world:
-
-The room graph (the 174–181 DATA) as a flat mapData array, exactly in the same order.
-
-A helper getExit(room, dir) that mimics what the BASIC does with RESTORE 174 and READ I(O).
-
-The 24 entity descriptions (monsters 1–6, objects 7–24) as [prefix, suffix] pairs.
-
-The initial P array (positions of monsters/objects).
-
-The direction keywords and the 16 verb keywords.
-
-A BASIC-style search helper.
-
-
-I’m not yet porting the whole spaghetti loop and all GOTOs here; this is the “all of that” configuration layer we’ve been analysing. Once this is solid, wiring the loop becomes much less insane.
-
 // ==========================
 // Core state and constants
 // ==========================
@@ -238,25 +219,3 @@ console.log('Room 1 north →', getExit(1, DIR_NORTH)); // expect 2
 // Example: describe the first monster and first object
 console.log('Monster 1:', describeEntity(1));  // "an evil wizard"
 console.log('Object 7:', describeEntity(7));   // "a gold coin"
-
-This is now a faithful JavaScript encoding of the “world config”:
-
-Map: same layout and semantics as the DATA 174–181 block, including the weird H, T, E, W, G, D tokens that depend on variables.
-
-Entities: all 24 description pairs, in order, split exactly as the BASIC READ expects.
-
-State array P: initial locations for all monsters and objects.
-
-Vocab: directions and verbs, with indexing that matches how Q and O are used.
-
-SEARCH and describeEntity helpers that match the original SEARCH and GOSUB 165.
-
-
-Next step — when you feel like it — we can wrap this in a proper state machine function (step(input) or similar) and then either:
-
-keep it very close to the BASIC control flow (line numbers as states), or
-
-factor it into saner pieces while keeping the data and behaviour identical.
-
-
-But at least now the gnarly data tables are pinned down in a modern, readable form.
