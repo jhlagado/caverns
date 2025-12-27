@@ -93,7 +93,7 @@ Supporting material and notes:
 ![NanoWasp emulator screenshot of Caverns.](assets/nanowasp.jpg)
 Caption: Screenshot captured from the NanoWasp emulator.
 
-![Original Talking Electronics Issue 8 ad for Caverns on VIC-20 (1982).](assets/vic20-versions-te-8.png)
+![Original Talking Electronics Issue 8 ad for Caverns on VIC-20 (1982).](assets/vic20-versions-te-8.jpg)
 Caption: Issue 8 Talking Electronics ad for the VIC-20 release.
 
 ![Dreamcards DUO 3 tape insert.](assets/duo3_insert.jpg)
